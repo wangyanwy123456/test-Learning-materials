@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>测试策略设计、实现 | &lt;center&gt;软件测试分类&lt;/center&gt;</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../01day/section1.2.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.3"
+        data-chapter-title="测试策略设计、实现"
+        data-filepath="01day/section1.3.md"
+        data-basepath=".."
+        data-revision="Thu Apr 26 2018 17:50:23 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        回顾测试理论基础
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="01day/index.html">
+            
+                
+                    <a href="../01day/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        单元测试基础知识
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="01day/section1.1.html">
+            
+                
+                    <a href="../01day/section1.1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        什么是单元测试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01day/section1.2.html">
+            
+                
+                    <a href="../01day/section1.2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        单元测试流程、测试计划
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="01day/section1.3.html">
+            
+                
+                    <a href="../01day/section1.3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        测试策略设计、实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >&lt;center&gt;软件测试分类&lt;/center&gt;</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="13-&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x8BBE;&#x8BA1;&#x3001;&#x5B9E;&#x73B0;"><center>1.3 &#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x8BBE;&#x8BA1;&#x3001;&#x5B9E;&#x73B0;</center></h1>
+<hr>
+<h2 id="&#x76EE;&#x6807;">&#x76EE;&#x6807;</h2>
+<pre><code>1. &#x4E86;&#x89E3;&#x5355;&#x5143;&#x6D4B;&#x8BD5;-&#x6D4B;&#x8BD5;&#x7B56;&#x7565;
+</code></pre><hr>
+<h2 id="1-&#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#xFF1F;">1. &#x4EC0;&#x4E48;&#x662F;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#xFF1F;</h2>
+<pre><code>&#x6982;&#x5FF5;&#xFF1A;&#x9488;&#x5BF9;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x9009;&#x62E9;&#x6D4B;&#x8BD5;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;
+</code></pre><h2 id="2-&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x65B9;&#x5F0F;">2. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7B56;&#x7565;-&#x65B9;&#x5F0F;</h2>
+<pre><code>1. &#x81EA;&#x4E0A;&#x5411;&#x4E0B;
+2. &#x81EA;&#x4E0B;&#x5411;&#x4E0A;
+3. &#x5B64;&#x7ACB;&#x7B56;&#x7565;    
+</code></pre><hr>
+<h3 id="21-&#x7B56;&#x7565;-&#x81EA;&#x4E0A;&#x5411;&#x4E0B;">2.1 &#x7B56;&#x7565; &#x81EA;&#x4E0A;&#x5411;&#x4E0B;</h3>
+<pre><code>&#x65B9;&#x5F0F;&#xFF1A;&#x4ECE;&#x6700;&#x4E0A;&#x5C42;&#x51FD;&#x6570;&#x5F80;&#x4E0B;&#x5F00;&#x59CB;&#x9010;&#x5C42;&#x6D4B;&#x8BD5;
+</code></pre><h4 id="&#x6848;&#x4F8B;1">&#x6848;&#x4F8B;1</h4>
+<pre><code>&#x4E24;&#x4E2A;&#x51FD;&#x6570;(&#x6C42;&#x548C;&#x3001;&#x6C42;&#x51CF;)&#xFF0C;&#x6C42;&#x548C;&#x51FD;&#x6570;&#x5185;&#x8C03;&#x7528;&#x6C42;&#x51CF;&#x51FD;&#x6570;&#xFF1B;
+</code></pre><h4 id="&#x6848;&#x4F8B;1&#x5206;&#x6790;">&#x6848;&#x4F8B;1&#x5206;&#x6790;</h4>
+<pre><code>1. &#x7F16;&#x5199;&#x6C42;&#x548C;&#x51FD;&#x6570;
+2. &#x7F16;&#x5199;&#x6C42;&#x51CF;&#x51FD;&#x6570;
+3. &#x5728;&#x6C42;&#x548C;&#x51FD;&#x6570;&#x5185;&#x8C03;&#x7528;&#x6C42;&#x51CF;&#x51FD;&#x6570;
+4. &#x8C03;&#x7528;&#x6C42;&#x548C;&#x51FD;&#x6570;
+</code></pre><h4 id="&#x6848;&#x4F8B;1-&#x95EE;&#x9898;">&#x6848;&#x4F8B;1 &#x95EE;&#x9898;</h4>
+<pre><code>1. &#x6211;&#x4EEC;&#x53EA;&#x60F3;&#x6D4B;&#x8BD5;&#x6C42;&#x548C;&#x51FD;&#x6570;&#x4E0D;&#x6D4B;&#x6C42;&#x51CF;&#x51FD;&#x6570;&#x8BE5;&#x5982;&#x4F55;&#x505A;&#xFF1F;
+</code></pre><h4 id="&#x6253;&#x6869;">&#x6253;&#x6869;</h4>
+<pre><code>&#x6982;&#x5FF5;&#xFF1A;&#x6253;&#x6869;&#x5C31;&#x662F;&#x6A21;&#x62DF;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F15;&#x7528;&#x7684;&#x51FD;&#x6570;
+
+&#x63D0;&#x793A;&#xFF1A;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x53EA;&#x6A21;&#x62DF;&#x5199;&#x4E2A;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x76F8;&#x5E94;&#x7684;&#x7ED3;&#x679C;&#x5373;&#x53EF;
+&#x793A;&#x4F8B;&#xFF1A;
+     def fun_1(self):
+         return true
+</code></pre><h4 id="&#x81EA;&#x4E0A;&#x5411;&#x4E0B;&#x603B;&#x7ED3;&#xFF1A;">&#x81EA;&#x4E0A;&#x5411;&#x4E0B;-&#x603B;&#x7ED3;&#xFF1A;</h4>
+<pre><code>1. &#x65B9;&#x5F0F;
+2. &#x6253;&#x6869;(&#x6A21;&#x62DF;&#x8C03;&#x7528;&#x7684;&#x51FD;&#x6570;)
+3. &#x7F3A;&#x70B9;(&#x6210;&#x672C;&#x9AD8;)
+</code></pre><h3 id="22-&#x7B56;&#x7565;-&#x81EA;&#x4E0B;&#x5411;&#x4E0A;">2.2 &#x7B56;&#x7565; &#x81EA;&#x4E0B;&#x5411;&#x4E0A;</h3>
+<pre><code>&#x65B9;&#x5F0F;&#xFF1A;&#x4ECE;&#x6700;&#x5E95;&#x5C42;&#x51FD;&#x6570;&#x5F80;&#x4E0A;&#x5F00;&#x59CB;&#x9010;&#x5C42;&#x6D4B;&#x8BD5;
+</code></pre><h4 id="&#x81EA;&#x4E0B;&#x5411;&#x4E0A;&#x603B;&#x7ED3;&#xFF1A;">&#x81EA;&#x4E0B;&#x5411;&#x4E0A;-&#x603B;&#x7ED3;&#xFF1A;</h4>
+<pre><code>1. &#x65B9;&#x5F0F;
+2. &#x7F3A;&#x70B9;(&#x5468;&#x671F;&#x957F;)
+</code></pre><h3 id="23-&#x7B56;&#x7565;-&#x5B64;&#x7ACB;&#x7B56;&#x7565;">2.3 &#x7B56;&#x7565; &#x5B64;&#x7ACB;&#x7B56;&#x7565;</h3>
+<pre><code>&#x65B9;&#x5F0F;&#xFF1A;&#x9009;&#x62E9;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#x7684;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;
+</code></pre><h4 id="&#x5B64;&#x7ACB;&#x7B56;&#x7565;&#x603B;&#x7ED3;&#xFF1A;">&#x5B64;&#x7ACB;&#x7B56;&#x7565;-&#x603B;&#x7ED3;&#xFF1A;</h4>
+<pre><code>1. &#x65B9;&#x5F0F;
+2. &#x3010;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x3011;
+3. &#x4F18;&#x70B9;&#xFF1A;&#x9009;&#x62E9;&#x91CD;&#x8981;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;
+</code></pre><hr>
+<h2 id="3-&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;">3. &#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;</h2>
+<h3 id="31-&#x4EC0;&#x4E48;&#x662F;&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;&#xFF1F;">3.1 &#x4EC0;&#x4E48;&#x662F;&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;&#xFF1F;</h3>
+<pre><code>&#x6982;&#x5FF5;&#xFF1A;&#x628A;&#x6211;&#x4EEC;&#x9009;&#x5B9A;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x8F6C;&#x5411;&#x6D41;&#x7A0B;&#x56FE;&#x3001;&#x6D41;&#x56FE;&#x53CA;&#x7528;&#x4F8B;&#x7684;&#x8FC7;&#x7A0B;
+</code></pre><h3 id="32-&#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;&#x5982;&#x4F55;&#x64CD;&#x4F5C;&#xFF1F;">3.2 &#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;&#x5982;&#x4F55;&#x64CD;&#x4F5C;&#xFF1F;</h3>
+<pre><code>1. &#x5C06;&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#x8F6C;&#x6362;&#x6210;&#x6D41;&#x7A0B;&#x56FE;
+2. &#x6839;&#x636E;&#x6D41;&#x7A0B;&#x56FE;&#x8F6C;&#x6362;&#x4E3A;&#x6D41;&#x56FE;
+</code></pre><h3 id="&#x6848;&#x4F8B;2">&#x6848;&#x4F8B;2</h3>
+<pre><code>&#x51FD;&#x6570;(test001)&#x5224;&#x65AD;&#x53C2;&#x6570;a,&#x5982;&#x679C;a&gt;0&#xFF0C;&#x8F93;&#x5165;&#x8BED;&#x53E5;1&#xFF1B;
+</code></pre><h4 id="&#x6848;&#x4F8B;2-&#x6D41;&#x7A0B;&#x56FE;">&#x6848;&#x4F8B;2 &#x6D41;&#x7A0B;&#x56FE;</h4>
+<p><img src="../01img/lct001.png" alt="&#x6848;&#x4F8B;2 &#x6D41;&#x7A0B;&#x56FE;"></p>
+<h3 id="&#x4EC0;&#x4E48;&#x662F;&#x6D41;&#x56FE;&#xFF1F;">&#x4EC0;&#x4E48;&#x662F;&#x6D41;&#x56FE;&#xFF1F;</h3>
+<pre><code>&#x6982;&#x5FF5;&#xFF1A;&#x8868;&#x8FBE;&#x7A0B;&#x5E8F;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E00;&#x79CD;&#x793A;&#x610F;&#x56FE;
+&#x6784;&#x6210;&#xFF1A;   
+     1) &#x5708;&#xFF1A;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x3001;&#x8BED;&#x53E5;&#x5757;(&#x4E00;&#x6761;&#x6216;&#x591A;&#x6761;&#x8BED;&#x53E5;)&#x4E24;&#x8005;&#x90FD;&#x5708;    
+     2) &#x7EBF;&#xFF1A;&#x7BAD;&#x5934;&#x6307;&#x5411;&#x7684;&#x7EBF;&#xFF0C;&#x7528;&#x6765;&#x8FDE;&#x63A5;&#x5708;&#x548C;&#x5708;&#x7684;&#x6307;&#x5411;    
+</code></pre><h3 id="&#x6D41;&#x56FE;&#x7684;&#x76EE;&#x7684;&#xFF1F;">&#x6D41;&#x56FE;&#x7684;&#x76EE;&#x7684;&#xFF1F;</h3>
+<pre><code>    1) &#x786E;&#x5B9A;&#x5355;&#x5143;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x7EA7;&#x522B;
+    2) &#x786E;&#x5B9A;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;
+
+&#x5907;&#x6CE8;: &#x8DEF;&#x5F84;&#x7684;&#x4E2A;&#x6570;&#x4E3A;&#x590D;&#x6742;&#x5EA6;&#x7684;&#x7EA7;&#x522B;(&#x4E00;&#x6761;&#x8DEF;&#x5F84;&#x4E3A;1&#x4E2A;&#x590D;&#x6742;&#x5EA6;&#x7EA7;&#x522B;)
+</code></pre><h4 id="&#x6848;&#x4F8B;2-&#x6D41;&#x56FE;">&#x6848;&#x4F8B;2 &#x6D41;&#x56FE;</h4>
+<p><img src="../01img/lt001.png" alt="&#x6848;&#x4F8B;2 &#x6D41;&#x56FE;"></p>
+<h4 id="&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;-&#x6A21;&#x677F;">&#x6D4B;&#x8BD5;&#x7528;&#x4F8B; &#x6A21;&#x677F;</h4>
+<p><img src="../01img/testcast01.png" alt="&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;"></p>
+<h4 id="&#x6848;&#x4F8B;2-&#x603B;&#x7ED3;">&#x6848;&#x4F8B;2 &#x603B;&#x7ED3;</h4>
+<pre><code>1. &#x8DEF;&#x5F84;&#xFF1A;2 (1-2-3,1-3)
+2. &#x590D;&#x6742;&#x5EA6;&#xFF1A;2
+3. &#x7528;&#x4F8B;&#x4E2A;&#x6570;&#xFF1A;2
+</code></pre><hr>
+<h4 id="&#x6848;&#x4F8B;3">&#x6848;&#x4F8B;3</h4>
+<pre><code>&#x51FD;&#x6570;(test002)&#x5224;&#x65AD;&#x53C2;&#x6570;a,b;&#x5982;&#x679C;a&gt;0 and b&lt;10  &#x8F93;&#x5165;&#x8BED;&#x53E5;1&#xFF1B;&#x5426;&#x5219;&#x8F93;&#x5165;&#x8BED;&#x53E5;2&#xFF1B;
+
+&#x4EE3;&#x7801;:
+&#x6D41;&#x7A0B;&#x56FE;:
+&#x6D41;&#x56FE;&#xFF1A;
+</code></pre><h4 id="&#x6848;&#x4F8B;3-&#x603B;&#x7ED3;">&#x6848;&#x4F8B;3 &#x603B;&#x7ED3;</h4>
+<pre><code>1. &#x590D;&#x6742;&#x5EA6; 
+2. &#x8DEF;&#x5F84;&#x660E;&#x7EC6;
+</code></pre><h4 id="&#x601D;&#x8003;&#xFF1F;">&#x601D;&#x8003;&#xFF1F;</h4>
+<pre><code>&#x5982;&#x679C;&#x628A;&#x6848;&#x4F8B;3&#x7684;&#x6761;&#x4EF6; a&gt;0 and b&lt;10 &#x6362;&#x6210; &#x6761;&#x4EF6;1 or &#x6761;&#x4EF6;2  &#x90A3;&#x4E48;&#x590D;&#x6742;&#x5EA6;&#x662F;&#x591A;&#x5C11;&#xFF1F;
+</code></pre><hr>
+<h4 id="&#x6848;&#x4F8B;4">&#x6848;&#x4F8B;4</h4>
+<pre><code>&#x8F93;&#x5165;&#x4E24;&#x4E2A;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x6570;&#x540C;&#x65F6;&#x4E3A;&#x5927;&#x4E8E;0&#x5C0F;&#x4E8E;10&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8FDB;&#x884C;&#x6C42;&#x548C;&#x8FD0;&#x7B97;&#xFF1B;&#x5426;&#x5219;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x540C;&#x65F6;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;10&#x5C0F;&#x4E8E;20&#x90A3;&#x4E48;
+&#x5C31;&#x8FDB;&#x884C;&#x6C42;&#x51CF;&#x8FD0;&#x7B97;&#xFF0C;&#x5426;&#x5219;&#x8F93;&#x5165;&#x9519;&#x8BEF;&#xFF1B;
+
+&#x4EE3;&#x7801;&#xFF1A;
+&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;
+&#x6D41;&#x56FE;&#xFF1A;
+</code></pre><h4 id="&#x6848;&#x4F8B;4-&#x603B;&#x7ED3;">&#x6848;&#x4F8B;4 &#x603B;&#x7ED3;</h4>
+<pre><code>1. &#x8DEF;&#x5F84;&#x6570;&#xFF1A;
+2. &#x8DEF;&#x5F84;&#x660E;&#x7EC6;&#xFF1A;
+3. &#x590D;&#x6742;&#x5EA6;&#xFF1A;
+</code></pre><hr>
+<h3 id="&#x6848;&#x4F8B;5-while&#x5FAA;&#x73AF;">&#x6848;&#x4F8B;5 while&#x5FAA;&#x73AF;</h3>
+<pre><code>&#x4F7F;&#x7528;while&#x5FAA;&#x73AF;&#x6C42;1-10&#x76F8;&#x52A0;&#x4E4B;&#x548C;&#xFF1B;
+
+&#x4EE3;&#x7801;&#xFF1A;
+&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;
+&#x6D41;&#x56FE;&#xFF1A;
+</code></pre><h4 id="&#x6848;&#x4F8B;5-&#x603B;&#x7ED3;">&#x6848;&#x4F8B;5 &#x603B;&#x7ED3;</h4>
+<pre><code>1. &#x8DEF;&#x5F84;&#x6570;&#xFF1A;
+2. &#x8DEF;&#x5F84;&#x660E;&#x7EC6;&#xFF1A;
+3. &#x590D;&#x6742;&#x5EA6;&#xFF1A;
+</code></pre><hr>
+<h3 id="&#x6848;&#x4F8B;6">&#x6848;&#x4F8B;6</h3>
+<pre><code>&#x63D0;&#x793A;&#x8F93;&#x5165;&#x4E09;&#x89D2;&#x5F62;&#x4E09;&#x6761;&#x8FB9;,&#x8FDB;&#x884C;&#x5224;&#x65AD;&#x4E09;&#x89D2;&#x5F62;&#x7C7B;&#x578B;(&#x7B49;&#x8FB9;&#x3001;&#x7B49;&#x8170;&#x3001;&#x666E;&#x901A;)&#x5E76;&#x8FDB;&#x884C;&#x63D0;&#x793A;&#xFF0C;&#x5426;&#x5219;&#x63D0;&#x793A;&#x4E0D;&#x662F;&#x4E09;&#x89D2;&#x5F62;&#xFF1B;
+
+&#x63D0;&#x793A;&#xFF1A;
+&#x4E09;&#x89D2;&#x5F62;&#xFF1A;&#x4E24;&#x8FB9;&#x4E4B;&#x548C;&#x5927;&#x4E8E;&#x7B2C;&#x4E09;&#x8FB9;&#xFF1B;
+&#x7B49;&#x8170;&#x4E09;&#x89D2;&#x5F62;&#xFF1A;&#x4E24;&#x6761;&#x8FB9;&#x76F8;&#x7B49;
+&#x7B49;&#x8FB9;&#x4E09;&#x89D2;&#x5F62;&#xFF1A;&#x4E09;&#x6761;&#x8FB9;&#x76F8;&#x7B49;
+</code></pre><h3 id="&#x6848;&#x4F8B;6-&#x6B65;&#x9AA4;&#x5206;&#x6790;">&#x6848;&#x4F8B;6 &#x6B65;&#x9AA4;&#x5206;&#x6790;</h3>
+<pre><code>1. &#x4EE3;&#x7801;&#xFF1A;
+
+    1) &#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;
+    2) &#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x4E09;&#x89D2;&#x5F62;
+    3) &#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x7B49;&#x8FB9;&#x4E09;&#x89D2;&#x5F62;
+    4) &#x975E;&#x7B49;&#x8FB9;&#x4E09;&#x89D2;&#x5F62;&#x7EE7;&#x7EED;&#x5224;&#x65AD;&#x662F;&#x5426;&#x4E3A;&#x7B49;&#x8170;&#x4E09;&#x89D2;&#x5F62;
+    5) &#x5982;&#x679C;&#x4E0D;&#x662F;&#x7B49;&#x8170;&#x4E09;&#x89D2;&#x5F62;&#xFF0C;&#x8F93;&#x51FA;&#x666E;&#x901A;&#x4E09;&#x89D2;&#x5F62;
+
+2. &#x6D41;&#x7A0B;&#x56FE;    
+3. &#x6D41;&#x56FE;   
+4. &#x7528;&#x4F8B;
+</code></pre><hr>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<pre><code>1. &#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8BA1;&#x5212;
+2. &#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x8BBE;&#x8BA1;
+3. &#x6D4B;&#x8BD5;&#x7B56;&#x7565;&#x5B9E;&#x73B0;
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../01day/section1.2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 单元测试流程、测试计划"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
